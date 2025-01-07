@@ -5,11 +5,18 @@
         <div class="game-name"> {{ article.gameName }}</div>
     </div>
     <div class="content-container">
-        <h2>{{ article.title }}</h2>
+
+        <h2> 
+            <a class ="article-title" href="{{article.articleLink}}">{{ article.title }}</a>
+        </h2>
+
         <p>{{ article.summary}}</p>
+
         <div class="footer">
+
             <span class="published-date"> {{ article.publishedDate }}</span>
             <a class="read-more" href="{{ article.articleLink}}"> Read the full article</a>
+            
         </div>
     </div>
 </div>

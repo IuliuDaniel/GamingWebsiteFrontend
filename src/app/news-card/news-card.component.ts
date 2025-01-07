@@ -27,21 +27,14 @@ export class NewsCardComponent
     // Hardcode some values to circumvent a temporary error
     {
         title: "Elden Ring: The Convergence Will Keep You Busy Until Nightreign",
-        summary: "Hardcoded test  summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summaryHardcoded test summary",
+        summary: "This article discusses the new DLC for Celeste, which adds new levels and challenges to the game. It highlights the game's continued support and the exciting new content for both new players and veterans.",
         publishedDate: "Hardcoded 23/12/1999",
         gameId: 3,
-        imageUrl: "https://i.pinimg.com/originals/09/d4/2f/09d42fa7d65d264e90ae49f769d84c25.jpg",
+        imageUrl: "https://steamuserimages-a.akamaihd.net/ugc/1476569426747375374/C4641BECDB337ECF35686370AE7B6D2F9C123F51/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
         articleLink: "https://www.youtube.com",
-        gameName: "Test name"
-    }
-
-    readMore()
-    {
-        // Method to define a read more functionality
-        // It will need a parameter
+        gameName: "Ghost of Tsushima"
     }
 }
-
 
 /*  TO RESEARCH
     1) What the fuck does "Standalone, not a part of any NgModule means"
