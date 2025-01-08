@@ -1,12 +1,28 @@
-<h1 style="margin-left: 10%; margin-right: 10%;">CAROUSEL</h1>
-<div style="margin-left: 10%; margin-right: 10%; margin-top: 10px;">
-    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="carouselConfig">
-        <div ngxSlickItem *ngFor="let i of images; let idx = index" class="slide">
-            <div class="slide-content">
-                <img [src]="i" alt="Image {{ idx + 1 }}" class="img-style" />
-                <h2>{{ titles[idx] }}</h2>
-                <p>{{ descriptions[idx] }}</p>
-            </div>
+<div class="carousel-container">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="carouselConfig"
+  >
+    <div
+      ngxSlickItem
+      *ngFor="let i of images; let idx = index"
+      class="carousel-slide"
+    >
+      <div class="carousel-image-container">
+        <!-- Image -->
+        <img [src]="i" alt="Image {{ idx + 1 }}" class="carousel-image" />
+
+        <!-- Title -->
+        <div class="carousel-title">
+          <h2>{{ titles[idx] }}</h2>
         </div>
-    </ngx-slick-carousel>
+
+        <!-- Description -->
+        <div class="carousel-description">
+          <p>{{ descriptions[idx] }}</p>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
 </div>

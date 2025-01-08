@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// Carousel developed using ngx-slick-carousel
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -7,15 +8,17 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
   imports: [CommonModule, SlickCarouselModule],
-  standalone: true
+  standalone: true,
+  encapsulation: ViewEncapsulation.None
 })
 export class CarouselComponent {
   images = [
     'https://i.redd.it/1bc2g09m0yj51.jpg',
-    'https://wallpaperaccess.com/full/4582655.jpg'
+    'https://wallpapers.com/images/featured/avatar-pictures-vohr0oeq1ld3lpbp.jpg',
+    "https://images7.alphacoders.com/757/757223.jpg"
   ];
-  titles = ['ONE title test', 'TWO title test'];
-  descriptions = ['ONE description', 'TWO description'];
+  titles = ['ONE title test', 'TWO title test', "THREE title test"];
+  descriptions = ['ONE description', 'TWO description', "THREE INUYASHA"];
 
   carouselConfig = {
     slidesToShow: 1,
@@ -24,7 +27,7 @@ export class CarouselComponent {
     autoplaySpeed: 5000,
     infinite: true,
     dots: true, // Enable dots navigation
-    arrows: true, // Enable navigation arrows
+    arrows: false, // Enable navigation arrows
     responsive: [
         {
             breakpoint: 768, // Mobile screens
@@ -36,7 +39,7 @@ export class CarouselComponent {
         {
             breakpoint: 1024, // Tablet screens
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 1,
                 slidesToScroll: 1
             }
         }

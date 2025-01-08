@@ -1,38 +1,145 @@
-.carousel {
-    width: 100%;
+/* General carousel container */
+.carousel-container {
+  width: 100%; /* Ensures the carousel container takes up the full width of its parent */
+  max-width: 1500px; /* Limits the maximum width of the carousel to 900px */
+  margin: 0 auto; /* Centers the carousel horizontally within its parent container */
+  padding: 0px; /* Adds padding inside the carousel container */
+  border: 1px solid black; /* Adds a black border around the carousel container */
+  background-color: #484848;
+  border-radius: 20px;
 }
 
-.slide {
-    text-align: center;
-    padding: 10px;
+/* Styling for each slide */
+.carousel-slide {
+  position: relative; /* Positions the overlay text relative to the slide */
+  display: flex; /* Uses flexbox for easy centering of the content */
+  justify-content: center; /* Centers the content horizontally within the slide */
+  align-items: center; /* Centers the content vertically within the slide */
+  height: 600px; /* Sets a fixed height for each slide */
+  padding: 20px; /* Adds padding around the content within each slide */
 }
 
-.slide-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Image container */
+.carousel-image-container {
+  position: relative; /* Allows the overlay to be positioned on top of the image */
+  width: 100%; /* Ensures the container takes up the full width of the slide */
+  height: 100%; /* Ensures the container takes up the full height of the slide */
+  display: flex; /* Uses flexbox to center the content inside the image container */
+  justify-content: center; /* Centers content horizontally within the image container */
+  align-items: center; /* Centers content vertically within the image container */
 }
 
-.img-style {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+.carousel-image-container:hover .carousel-title,
+.carousel-image-container:hover .carousel-description
+{
+  opacity: 1;
+  transition: opacity 5s ease;
 }
 
-/* Change the color and size of the arrows */
-.slick-prev:before, .slick-next:before {
-    color: black; /* Change this to the desired color */
-    font-size: 30px; /* Adjust size as needed */
+/* Image specific styling */
+.carousel-image {
+  width: 100%; /* Ensures the image stretches to fill the container's width */
+  height: 100%; /* Ensures the image stretches to fill the container's height */
+  object-fit: cover; /* Ensures the image covers the container without distorting */
+  display: block; /* Removes any unwanted inline spacing (prevents image from being inline-block) */
+  border-radius: 20px;
+  transition: filter 2s ease;
+}
+
+.carousel-image:hover
+{
+  filter: brightness(40%);
+}
+
+
+
+/* Ensure slick-dots styling is applied correctly */
+ngx-slick-carousel .slick-dots {
+  position: absolute; /* Positions the dots absolutely within the carousel container */
+  bottom: -20px; /* Sets the distance of the dots from the bottom of the carousel container */
+  left: 50%; /* Positions the dots horizontally in the center of the container */
+  transform: translateX(-50%); /* Offsets the dots by 50% of their width to perfectly center them */
+  display: flex; /* Uses flexbox to arrange the dots horizontally */
+  justify-content: center; /* Aligns the dots in the center horizontally */
+  align-items: center; /* Aligns the dots vertically in the center */
+  list-style-type: none; /* Removes the default list style (bullets) */
+  margin: 0; /* Removes any default margin around the dots */
+  padding: 0; /* Removes any default padding around the dots */
+  z-index: 1; /* Ensures the dots are layered above other content */
+}
+
+.carousel-title {
+  position: absolute;
+  padding-right: 20px;
+  padding-left: 20px;
+  top: 0;
+  left: 0;
+  margin: 30px;
+  color: white;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: "Audiowide", serif;
+  font-style: normal;
+  opacity: 0;
+}
+
+.carousel-description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  color: white;
+  font-size: 1rem;
+  opacity: 0;
+}
+
+/* Style each individual dot */
+ngx-slick-carousel .slick-dots li {
+  margin: 0 8px; /* Adds horizontal spacing between each dot */
+}
+
+/* Style the button inside each dot */
+ngx-slick-carousel .slick-dots li button {
+  background-color: rgb(0, 0, 0); /* Sets the background color of the dot with transparency */
+  border-radius: 50%; /* Makes the button circular by giving it a border radius of 50% */
+  width: 12px; /* Sets the width of each dot */
+  height: 12px; /* Sets the height of each dot */
+  padding: 0; /* Removes padding inside the button */
+  border: none; /* Removes the border around the button */
+  outline: none; /* Removes the outline when the button is focused */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the dot */
+  transition: background-color 0.3s ease; /* Smooth transition for the background color when it changes */
+  font-size: 0; /* Removes any default font-size or text inside the button */
+}
+
+/* Active dot (the currently selected dot) */
+ngx-slick-carousel .slick-dots li.slick-active button {
+  background-color: #ff5722; /* Sets the background color of the active dot */
+}
+
+/* Hover effect for the dots */
+ngx-slick-carousel .slick-dots li button:hover {
+  background-color: #ff9800; /* Changes the background color of the dot when hovered */
+}
+
+/* Remove the default dot icon */
+ngx-slick-carousel .slick-dots li button::before {
+  content: none; /* Removes any default content inside the dot button */
+}
+
+/* Media query for smaller screens (optional) */
+@media (max-width: 768px) {
+  /* Adjusts the text overlay on smaller screens */
+  .carousel-text-overlay {
+    width: 95%; /* Increases the width of the overlay to 95% on smaller screens */
+    max-width: 90%; /* Ensures the overlay does not stretch too wide */
+    font-size: 0.9rem; /* Reduces the font size of the text */
   }
-  
-  /* Optional: Customize the positioning of arrows */
-  .slick-prev {
-    left: -40px; /* Adjust to position the left arrow */
-    z-index: 1;  /* Ensure it stays on top of other elements */
+
+
+  /* Reduces the font size of the description on small screens */
+  .carousel-text-overlay p {
+    font-size: 0.8rem; /* Decreases the font size of the description */
   }
-  
-  .slick-next {
-    right: -40px; /* Adjust to position the right arrow */
-    z-index: 1;
-  }
-  
+}
