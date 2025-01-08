@@ -1,10 +1,12 @@
-<!-- Define the carousel component -->
- <div class="carousel">
-    <div class="carousel-content">
-        <div class="carousel-item" *ngFor="let item of items">
-            <h2> Test</h2>
+<h1 style="margin-left: 10%; margin-right: 10%;">CAROUSEL</h1>
+<div style="margin-left: 10%; margin-right: 10%; margin-top: 10px;">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="carouselConfig">
+        <div ngxSlickItem *ngFor="let i of images; let idx = index" class="slide">
+            <div class="slide-content">
+                <img [src]="i" alt="Image {{ idx + 1 }}" class="img-style" />
+                <h2>{{ titles[idx] }}</h2>
+                <p>{{ descriptions[idx] }}</p>
+            </div>
         </div>
-    </div>
-    <button (click)="previous()">Previous</button>
-    <button (click)="next()">Next</button>
- </div>
+    </ngx-slick-carousel>
+</div>

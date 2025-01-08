@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NewsCardComponent } from "./news-card/news-card.component";
 import { CommonModule } from '@angular/common';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent } from "./carousel/carousel.component";
 
 @Component({
   selector: 'app-root',
