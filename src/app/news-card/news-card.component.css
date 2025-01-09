@@ -144,7 +144,7 @@
 
 
   /* Responsive adjustments */
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .news-card {
       flex-direction: column;
     }

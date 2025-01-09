@@ -1,0 +1,86 @@
+<body [style.background-image]="'url(' + game.wallpaperLink + ')'" class="full-page-background">
+
+<div class="game-details-container" >
+
+
+    <!-- Title -->
+     <div class="game-title">
+        <h1> {{ game.name }}</h1>
+     </div>
+
+     <!-- Description -->
+      <div class="game-description">
+        <p> {{ game.description }} </p>
+      </div>
+
+      <!-- Game details and media-->
+       <div class="game-details-media">
+
+            <!-- Game details-->
+             <div class="game-details">
+                <p><strong>Release Date:</strong> {{ game.releaseDate }}</p>
+                <p><strong>Developer:</strong> {{ game.developer }}</p>
+                <p><strong>Publisher:</strong> {{ game.publisher }}</p>
+                <p><strong>Platforms:</strong> {{ game.platforms.join(', ') }}</p>
+                <p><strong>Genre ID:</strong> {{ game.genreId }}</p>
+
+                <!-- Stores with prices-->
+                <h3> Available on:</h3>
+                <ul>
+                    <li *ngFor="let store of game.stores">
+                        <a [href]="store.websiteUrl" target="_blank"> {{ store.name }} </a>
+                        - ${{ store.price }}
+                    </li>
+                </ul>
+
+                <!-- Minumum requirements -->
+                 <div class="minimum-requirements">
+                    <h3> Minimum Requirements</h3>
+                    <p> {{ ParseRequirements(game.minimumRequirements, 0)}} </p>
+                    <p> {{ ParseRequirements(game.minimumRequirements, 1)}} </p>
+                    <p> {{ ParseRequirements(game.minimumRequirements, 2)}} </p>
+                    <p> {{ ParseRequirements(game.minimumRequirements, 3)}} </p>
+                    <p> {{ ParseRequirements(game.minimumRequirements, 4)}} </p>
+                 </div>
+
+                  <!-- Recommended requirements -->
+                 <div class="recommended-requirements">
+                    <h3> Recommended Requirements</h3>
+                    <p> {{ ParseRequirements(game.recommendedRequirements, 0)}} </p>
+                    <p> {{ ParseRequirements(game.recommendedRequirements, 1)}} </p>
+                    <p> {{ ParseRequirements(game.recommendedRequirements, 2)}} </p>
+                    <p> {{ ParseRequirements(game.recommendedRequirements, 3)}} </p>
+                    <p> {{ ParseRequirements(game.recommendedRequirements, 4)}} </p>
+                 </div>
+
+             </div>
+
+             <!-- Game media -->
+              <div class="game-media">
+
+                <!-- Trailer -->
+                 <div class="game-trailer">
+                    <h3> TRAILER </h3>
+                    <iframe [src]="sanitizeUrl(game.trailerUrl)" allowfullscreen frameBorder="0">
+                    </iframe>
+                 </div>
+
+                 <!-- Screenshots -->
+                 <div class="game-screenshots">
+                    <h3> IMAGES </h3>
+                    <div class="screenshots-container">
+                        <img *ngFor="let screenshot of game.screenshots" [src]="screenshot" alt="Screenshot" />
+                    </div>
+                 </div>
+
+                 <!-- News -->
+                  <div class="game-news">
+                    <h3> NEWS </h3>
+                    <div class="news-container" *ngFor="let article of game.news">
+                        <app-news-card></app-news-card>
+                    </div>
+                  </div>
+              </div>
+       </div>
+</div>
+</body>
