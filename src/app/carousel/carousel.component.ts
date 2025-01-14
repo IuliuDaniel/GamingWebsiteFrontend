@@ -1,25 +1,25 @@
 // Carousel developed using ngx-slick-carousel
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { input } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
-  imports: [CommonModule, SlickCarouselModule],
+  imports: [CommonModule, SlickCarouselModule, RouterModule],
   standalone: true,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None // Disable the default settings for the carousel, dots can be modified now
 })
 export class CarouselComponent {
-  images = [
-    'https://i.redd.it/1bc2g09m0yj51.jpg',
-    'https://wallpapers.com/images/featured/avatar-pictures-vohr0oeq1ld3lpbp.jpg',
-    "https://images7.alphacoders.com/757/757223.jpg"
-  ];
-  titles = ['ONE title test', 'TWO title test', "THREE title test"];
-  descriptions = ['ONE description', 'TWO description', "THREE INUYASHA"];
+  @Input() images: string[] = []; // Array of images to be displayed in the carousel
+  @Input() titles: string[] = []; // Array of titles to be displayed in the carousel
+  @Input() descriptions: string[] = []; // Array of descriptions to be displayed in the carousel
+  @Input() gameId: number[] = []; // Array of gameIds to be displayed in the carousel
 
+  // Configuration for carousel
   carouselConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,

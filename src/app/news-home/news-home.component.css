@@ -1,0 +1,79 @@
+/* Page container */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Ensure it spans the full height */
+    background-color: #202020; /* Slightly lighter gray than the page background */
+    padding-top: 30px;
+  }
+  
+  /* Carousel container */
+  .component-container-carousel {
+    width: 90%; /* Allow scalability for responsiveness */
+    max-width: 1200px; /* Set a max width for larger screens */
+    margin-bottom: 20px; /* Add spacing between the two components */
+    padding-bottom: -10px; /* Add padding for aesthetics */
+  }
+  
+  /* News card container */
+  .component-container-news-card {
+    width: 90%; /* Allow scalability for responsiveness */
+    max-width: 1200px; /* Set a max width for larger screens */
+    margin-left: 10%; /* Shift the news cards slightly to the left */
+    border-radius: 10px; /* Add rounded corners */
+    padding: 20px; /* Add padding for aesthetics */
+  }
+  
+/* General styling for the h3 titles */
+h3 {
+    color: #e0e0e0; /* Light grey text color for a subtle, modern look */
+    font-family: 'Poppins', sans-serif; /* Use the Poppins font for modern look */
+    font-size: 1.5rem; /* Adjust the font size for readability */
+    font-weight: 500; /* Set the weight to a medium level for balance */
+    text-align: center; /* Center align the titles */
+    margin: 20px 0; /* Add spacing around the titles */
+    padding: 0; /* Remove default padding */
+}
+
+/* Specific styling for the home carousel title */
+.carouse-home-title h3 {
+    color: #ffffff; /* White text for a contrast against darker backgrounds */
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for a more elegant serif font */
+    font-size: 2rem; /* Larger font size for emphasis */
+    margin-bottom: 15px; /* Add some space below the title */
+    letter-spacing: 1px; /* Add letter spacing for a refined look */
+}
+
+/* Specific styling for the news title */
+.news-title h3 {
+    color: #f0f0f0; /* Slightly darker grey for a subtle distinction */
+    font-family: 'Poppins', sans-serif; /* Keep Poppins for modern look */
+    font-size: 1.8rem; /* Adjust size to fit with the news cards */
+    margin-top: 40px; /* Add space above to separate it from other content */
+    margin-bottom: 20px; /* Add space below */
+    font-weight: 600; /* Bold weight for emphasis */
+    letter-spacing: 0.5px; /* Slight letter spacing for elegance */
+}
+
+/* Separator Line */
+.separator {
+  width: 90%; /* Match the width of the components */
+  max-width: 1200px; /* Match the max-width of the components */
+  border-top: 2px solid #555555; /* Dark grey line for subtle separation */
+  margin: 20px 0; /* Add space above and below the line */
+  opacity: 0.8; /* Slight transparency for a softer look */
+}
+
+
+  /* Media queries for smaller screens */
+  @media (max-width: 768px) {
+    .component-container-carousel,
+    .component-container-news-card {
+      width: 95%; /* Adjust width for smaller screens */
+      margin-left: 0; /* Remove the left shift on smaller screens */
+    }
+  }
+

@@ -1,4 +1,5 @@
 // Interfaces for the Game details
+// I'm pretty sure they should be in a separate folder, lol
 export interface Game
 {
     gameId: number;
@@ -6,7 +7,7 @@ export interface Game
     releaseDate: string;
     developer: string;
     publisher: string;
-    genreId: number;
+    genreName: string;
     trailerUrl: string;
     minimumRequirements: string;
     recommendedRequirements: string;
@@ -14,16 +15,6 @@ export interface Game
     wallpaperLink: string;
     screenshots: string[];
     platforms: string[];
-    news: Array<
-    {
-        title: string;
-        summary: string;
-        publishedDate: string;
-        gameId: number;
-        imageUrl: string;
-        articleLink: string;
-        gameName: string;
-    }>;
     stores: Array<
     {
         storeId: number;

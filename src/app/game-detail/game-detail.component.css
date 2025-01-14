@@ -125,6 +125,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Media section title */
 .game-media h3 {
     margin-bottom: 10px;
     color: white;
@@ -153,6 +154,7 @@ body {
     padding-bottom: 20px;
 }
 
+/* Screenshot styling */
 .screenshots-container img {
     width: 100%;
     border-radius: 8px;
@@ -160,6 +162,7 @@ body {
     filter: brightness(150%);
 }
 
+/* On hover, scale up the image */
 .screenshots-container img:hover {
     cursor: pointer;
     transform: scale(2);
@@ -174,6 +177,7 @@ body {
 }
 
 /* Responsive adjustments */
+/* Chat gpt-ed this */
 @media (max-width: 768px) {
     .game-details-media {
         grid-template-columns: 1fr;

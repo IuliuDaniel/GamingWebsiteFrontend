@@ -1,4 +1,5 @@
-<body [style.background-image]="'url(' + game.wallpaperLink + ')'" class="full-page-background">
+<!-- I'm pretty sure this will give me headaches at some point, who knows -->
+ <div [style.background-image]="'url(' + game.wallpaperLink + ')'" class="full-page-background"> 
 
 <div class="game-details-container" >
 
@@ -22,7 +23,7 @@
                 <p><strong>Developer:</strong> {{ game.developer }}</p>
                 <p><strong>Publisher:</strong> {{ game.publisher }}</p>
                 <p><strong>Platforms:</strong> {{ game.platforms.join(', ') }}</p>
-                <p><strong>Genre ID:</strong> {{ game.genreId }}</p>
+                <p><strong>Genre ID:</strong> {{ game.genreName }}</p>
 
                 <!-- Stores with prices-->
                 <h3> Available on:</h3>
@@ -34,6 +35,7 @@
                 </ul>
 
                 <!-- Minumum requirements -->
+                <!-- Looks like shit because I was too lazy to make a for loop -->
                  <div class="minimum-requirements">
                     <h3> Minimum Requirements</h3>
                     <p> {{ ParseRequirements(game.minimumRequirements, 0)}} </p>
@@ -44,6 +46,7 @@
                  </div>
 
                   <!-- Recommended requirements -->
+                  <!-- I was lazy here too -->
                  <div class="recommended-requirements">
                     <h3> Recommended Requirements</h3>
                     <p> {{ ParseRequirements(game.recommendedRequirements, 0)}} </p>
@@ -76,11 +79,12 @@
                  <!-- News -->
                   <div class="game-news">
                     <h3> NEWS </h3>
-                    <div class="news-container" *ngFor="let article of game.news">
-                        <app-news-card></app-news-card>
+                    <div class="news-container">
+                        <!-- We pass it the gameId of the page so it renders relevant articles -->
+                        <app-news-card-api [gameId]="game.gameId"></app-news-card-api>  
                     </div>
                   </div>
               </div>
        </div>
 </div>
-</body>
+ </div>

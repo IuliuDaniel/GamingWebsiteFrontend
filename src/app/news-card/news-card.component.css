@@ -41,6 +41,14 @@
     filter: brightness(85%);
 }
 
+.game-name a {
+  text-decoration: none;   /* Remove the underline */
+  color: inherit;          /* Inherit the color from .game-name */
+  display: inline-block;    /* Ensure the <a> behaves like an inline block */
+  width: 100%;              /* Make sure the <a> takes the full width of its parent */
+  height: 100%;             /* Make sure the <a> takes the full height of its parent */
+  
+}
 /* Style the name inside the image */
 .game-name
 {

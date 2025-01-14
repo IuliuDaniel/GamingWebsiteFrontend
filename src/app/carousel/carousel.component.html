@@ -11,8 +11,9 @@
     >
       <div class="carousel-image-container">
         <!-- Image -->
-        <img [src]="i" alt="Image {{ idx + 1 }}" class="carousel-image" />
-
+         <a [routerLink]="['/games', gameId[idx]]">
+          <img [src]="i" alt="Image {{ idx + 1 }}" class="carousel-image" />
+        </a>
         <!-- Title -->
         <div class="carousel-title">
           <h2>{{ titles[idx] }}</h2>

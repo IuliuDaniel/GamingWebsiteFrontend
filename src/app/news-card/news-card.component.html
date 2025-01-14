@@ -2,7 +2,9 @@
 <div class="news-card">
     <div class="image-container">
         <img [src] ="article.imageUrl" alt="{{ article.title }}" >
-        <div class="game-name"> {{ article.gameName }}</div>
+        <div class="game-name">
+            <a [routerLink]="['/games', article.gameId]">{{ article.gameName }}</a>
+        </div>
     </div>
     <div class="content-container">
 
@@ -14,7 +16,7 @@
 
         <div class="footer">
 
-            <span class="published-date"> {{ article.publishedDate }}</span>
+            <span class="published-date"> Published date: {{ article.publishedDate }}</span>
             <a class="read-more" href="{{ article.articleLink}}"> Read the full article</a>
             
         </div>
